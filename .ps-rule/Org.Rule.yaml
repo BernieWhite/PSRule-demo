@@ -45,11 +45,14 @@ spec:
   type:
     - Microsoft.Resources/deployments
   where:
-    field: properties.parameters
-    hasValue: true
+    allOf:
+      - source: Template
+        endsWith: .bicep
+      - field: properties.parameters
+        hasValue: true
   condition:
     allOf:
-      - field: properties.template.metadata.name
+      - field: metadata.name
         hasValue: true
 
 ---
@@ -62,9 +65,12 @@ spec:
   type:
     - Microsoft.Resources/deployments
   where:
-    field: properties.parameters
-    hasValue: true
+    allOf:
+      - source: Template
+        endsWith: .bicep
+      - field: properties.parameters
+        hasValue: true
   condition:
     allOf:
-      - field: properties.template.metadata.description
+      - field: metadata.description
         hasValue: true

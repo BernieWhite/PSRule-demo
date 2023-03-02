@@ -46,3 +46,4 @@ jobs:
       - run: |
           cat reports/summary.md >> $GITHUB_STEP_SUMMARY
         name: Write job summary
+        if: ${{ success() || failure() }}

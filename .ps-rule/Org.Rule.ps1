@@ -24,14 +24,14 @@ Export-PSRuleConvention 'Org.BicepModule' -Initialize {
 
 #region Custom Rules
 
-# Synopsis: All modules must have a corresponding tests file.
+# Synopsis: All modules must have a corresponding tests file. Please create a file named 'main.tests.bicep' in the '.tests' directory of the module.
 Rule 'Org.RequireTests' -Type 'Azure.Bicep.ModuleInfo' {
-    $Assert.FilePath($TargetObject, 'Path', @('.tests/main.tests.bicep'))
+    $Assert.FilePath($TargetObject.Path, '.', @('.tests/main.tests.bicep'))
 }
 
-# Synopsis: All modules must have a corresponding README file.
+# Synopsis: All modules must have a corresponding README file. Please create a file named 'README.md' in the module directory.
 Rule 'Org.RequireReadme' -Type 'Azure.Bicep.ModuleInfo' {
-    $Assert.FilePath($TargetObject, 'Path', @('README.md'))
+    $Assert.FilePath($TargetObject.Path, '.', @('README.md'))
 }
 
 #enregion Custom Rules

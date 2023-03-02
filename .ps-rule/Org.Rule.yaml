@@ -34,3 +34,37 @@ spec:
     source: Parameter
     withinPath:
       - template/deployments/contoso/landing-zones/subscription-1/policy/
+
+---
+# Synopsis: All modules must have a metadata name.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Rule
+metadata:
+  name: Org.ModuleName
+spec:
+  type:
+    - Microsoft.Resources/deployments
+  where:
+    field: properties.parameters
+    hasValue: true
+  condition:
+    allOf:
+      - field: properties.template.metadata.name
+        hasValue: true
+
+---
+# Synopsis: All modules must have a metadata description.
+apiVersion: github.com/microsoft/PSRule/v1
+kind: Rule
+metadata:
+  name: Org.ModuleDescription
+spec:
+  type:
+    - Microsoft.Resources/deployments
+  where:
+    field: properties.parameters
+    hasValue: true
+  condition:
+    allOf:
+      - field: properties.template.metadata.description
+        hasValue: true

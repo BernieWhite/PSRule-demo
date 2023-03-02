@@ -37,3 +37,5 @@ jobs:
         uses: microsoft/ps-rule@v2.7.0
         with:
           modules: PSRule.Rules.Azure
+          version: 2.8.0-B0034
+          prerelease: true

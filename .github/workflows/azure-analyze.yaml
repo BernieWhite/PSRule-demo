@@ -39,3 +39,5 @@ jobs:
           modules: PSRule.Rules.Azure
           version: 2.8.0-B0034
           prerelease: true
+        env:
+          PSRULE_OUTPUT_JOB_SUMMARY_PATH: ${{ env.GITHUB_STEP_SUMMARY }}

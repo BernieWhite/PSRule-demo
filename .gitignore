@@ -2,3 +2,6 @@
 reports/
 out/
 .vs/
+**/deploy.json
+modules/**/main.json
+modules/**/main.tests.json

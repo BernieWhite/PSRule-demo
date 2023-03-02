@@ -40,4 +40,9 @@ jobs:
           version: 2.8.0-B0034
           prerelease: true
         env:
-          PSRULE_OUTPUT_JOBSUMMARYPATH: ${{ env.GITHUB_STEP_SUMMARY }}
+          PSRULE_OUTPUT_JOBSUMMARYPATH: reports/summary.md
+
+      # Write job summary.
+      - run: |
+          cat reports/summary.md >> $GITHUB_STEP_SUMMARY
+        name: Write job summary

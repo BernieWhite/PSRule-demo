@@ -34,7 +34,7 @@ jobs:
 
       # Run analysis by using the PSRule GitHub action.
       - name: Run PSRule analysis
-        uses: microsoft/ps-rule@v2.7.0
+        uses: microsoft/ps-rule@v2.8.0
         with:
           modules: PSRule.Rules.Azure
           version: 2.8.0-B0034

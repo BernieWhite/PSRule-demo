@@ -18,6 +18,9 @@ requires:
   PSRule: '@pre >=2.7.0'
   PSRule.Rules.Azure: '@pre >=1.24.2'
 
+execution:
+  ruleSuppressed: Ignore
+
 # Use PSRule for Azure.
 include:
   module:

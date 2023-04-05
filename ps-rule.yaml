@@ -18,6 +18,11 @@ requires:
   PSRule: '@pre >=2.7.0'
   PSRule.Rules.Azure: '@pre >=1.24.2'
 
+
+# convention:
+#   include:
+#     - Org.BicepModule
+
 execution:
   ruleSuppressed: Ignore
 
@@ -56,6 +61,10 @@ configuration:
 
   # Configure the minimum version of the Bicep CLI.
   AZURE_BICEP_MINIMUM_VERSION: '0.13.0'
+
+  # Configure the resoure group for unit testing.
+  AZURE_RESOURCE_GROUP:
+    tags: {}
 
 rule:
   exclude:

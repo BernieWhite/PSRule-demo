@@ -54,6 +54,10 @@ configuration:
   # Configure the minimum version of the Bicep CLI.
   AZURE_BICEP_MINIMUM_VERSION: '0.13.0'
 
+rule:
+  exclude:
+    - Azure.Deployment.Name
+
 # Suppression ignores rules for a specific Azure resource by name.
 suppression:
   Azure.KeyVault.Logs:

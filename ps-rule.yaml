@@ -18,9 +18,13 @@ requires:
   PSRule: '@pre >=2.7.0'
   PSRule.Rules.Azure: '@pre >=1.24.2'
 
+
 # convention:
 #   include:
 #     - Org.BicepModule
+
+execution:
+  ruleSuppressed: Ignore
 
 # Use PSRule for Azure.
 include:
@@ -61,6 +65,10 @@ configuration:
   # Configure the resoure group for unit testing.
   AZURE_RESOURCE_GROUP:
     tags: {}
+
+rule:
+  exclude:
+    - Azure.Deployment.Name
 
 # Suppression ignores rules for a specific Azure resource by name.
 suppression:

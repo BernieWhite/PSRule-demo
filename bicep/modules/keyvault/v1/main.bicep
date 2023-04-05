@@ -56,7 +56,7 @@ param useRBAC bool = false
 
 @sys.description('The network firewall defined for this vault.')
 param networkAcls object = {
-  defaultAction: 'Allow'
+  defaultAction: 'Deny'
   bypass: 'AzureServices'
   ipRules: []
   virtualNetworkRules: []
